@@ -23,12 +23,22 @@ document.addEventListener("DOMContentLoaded", function () {
       .padStart(2, "0")}:${secondsLeft.toString().padStart(2, "0")}`;
   }
 
+  function togglePlayButton() {
+    if (isPlaying) {
+      playButton.classList.remove("fa-circle-play");
+      playButton.classList.add("fa-circle-pause");
+    } else {
+      playButton.classList.remove("fa-circle-pause");
+      playButton.classList.add("fa-circle-play");
+    }
+  }
+
   playButton.addEventListener("click", function () {
     if (isPlaying) {
       clearInterval(animationInterval);
       animationInterval = null;
-      playButton.classList.remove("fa-circle-pause");
-      playButton.classList.add("fa-circle-play");
+      isPlaying = false;
+      togglePlayButton();
     } else {
       let width = (currentTime / duration) * 100;
       animationInterval = setInterval(() => {
@@ -40,16 +50,15 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
           clearInterval(animationInterval);
           animationInterval = null;
-          playButton.classList.remove("fa-circle-play");
-          playButton.classList.add("fa-circle-pause");
           currentTime = 0;
           seekBar.style.width = "0%";
           updateTimeDisplay();
+          isPlaying = false;
+          togglePlayButton();
         }
       }, (duration * 10) / 100);
-      playButton.classList.remove("fa-circle-play");
-      playButton.classList.add("fa-circle-pause");
+      isPlaying = true;
+      togglePlayButton();
     }
-    isPlaying = !isPlaying;
   });
 });
