@@ -16,32 +16,43 @@
     <title>Music Player</title>
   </head>
   <body>
-    <div class="player-container">
-      <img
-        class="album-cover"
-        src="https://i.scdn.co/image/ab67616d0000b273fdff412b727999068bb938bf"
-      />
-      <p class="title">Hold On</p>
-      <p class="subtitle">Jet</p>
-      <div class="time-container">
-        <div id="start-time">00:00</div>
-        <div id="end-time">04:02</div>
-      </div>
-      <div class="seek-bar-container">
-        <div id="seek-bar"></div>
-      </div>
-      <div class="controls">
-        <div class="back">
-          <i class="fa-solid fa-backward-step back-next"></i>
+    <div class="main-container">
+      <div class="player-container">
+        <img class="song-thumbnail" src="" alt="album cover" />
+        <h2></h2>
+        <p></p>
+        <div class="time-container">
+          <div id="start-time">00:00</div>
+          <div id="end-time">04:02</div>
         </div>
         <div>
-          <i id="play-button" class="fa-solid fa-circle-play play-icon"></i>
+          <input type="range" value="0" id="progress" />
         </div>
-        <div class="next">
-          <i class="fa-solid fa-forward-step back-next"></i>
+        <div class="controls">
+          <div class="back">
+            <i class="fa-solid fa-backward-step back-next"></i>
+          </div>
+          <div>
+            <i id="play-button" class="fa-solid fa-circle-play play-icon"></i>
+          </div>
+          <div class="next">
+            <i class="fa-solid fa-forward-step back-next"></i>
+          </div>
+        </div>
+      </div>
+      <div class="album-details">
+        <h1>Explore</h1>
+        <ul class="tabs-header">
+          <li>Lyrics</li>
+          <li>Other Albums</li>
+          <li>Related Artist</li>
+        </ul>
+        <div class="lyrics-container">
+          <p id="lyrics"></p>
         </div>
       </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="index.js"></script>
   </body>
 </html>
