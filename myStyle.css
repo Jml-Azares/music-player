@@ -109,12 +109,15 @@ div .next {
 }
 
 .tabs-header {
-  list-style-type: none;
   display: flex;
   gap: 100px;
   padding: 30px 0;
   font-size: larger;
-  cursor: pointer;
+}
+
+.tabs-header a {
+  color: #fff;
+  text-decoration: none;
 }
 
 .lyrics-container {
@@ -125,15 +128,74 @@ div .next {
 }
 
 .lyrics-container::-webkit-scrollbar {
-  width: 5px; /* Set the width of the scrollbar */
+  width: 5px;
 }
 
 .lyrics-container::-webkit-scrollbar-track {
-  background: #f1f1f1; /* Set the background color of the track */
+  background: #f1f1f1;
   border-radius: 5px;
 }
 
 .lyrics-container::-webkit-scrollbar-thumb {
-  background: #b8621b; /* Set the color of the thumb */
-  border-radius: 5px; /* Round the corners of the thumb */
+  background: #b8621b;
+  border-radius: 5px;
+}
+
+.other-albums,
+.related-artist {
+  display: flex;
+  gap: 30px;
+  padding-top: 30px;
+  width: 500px;
+  overflow-x: scroll;
+}
+
+.other-albums::-webkit-scrollbar {
+  height: 5px;
+}
+
+.other-albums::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 5px;
+}
+
+.other-albums::-webkit-scrollbar-thumb {
+  background: #b8621b;
+  border-radius: 5px;
+}
+
+.related-artist::-webkit-scrollbar {
+  height: 5px;
+}
+
+.related-artist::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 5px;
+}
+
+.related-artist::-webkit-scrollbar-thumb {
+  background: #b8621b;
+  border-radius: 5px;
+}
+
+.album-image-container,
+.artist-image-container {
+  height: 150px;
+  width: 150px;
+  aspect-ratio: 1;
+  margin-bottom: 20px;
+}
+
+.album-image-container > img,
+.artist-image-container > img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.album-date {
+  font-style: italic;
+}
+
+.show-hide {
+  display: none !important;
 }

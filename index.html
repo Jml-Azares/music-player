@@ -42,14 +42,16 @@
       </div>
       <div class="album-details">
         <h1>Explore</h1>
-        <ul class="tabs-header">
-          <li>Lyrics</li>
-          <li>Other Albums</li>
-          <li>Related Artist</li>
-        </ul>
-        <div class="lyrics-container">
+        <div class="tabs-header">
+          <a href="#" aria-label="lyrics">Lyrics</a>
+          <a href="#" aria-label="albums">Other Albums</a>
+          <a href="#" aria-label="artist">Related Artists</a>
+        </div>
+        <div class="lyrics-container" id="lyrics">
           <p id="lyrics"></p>
         </div>
+        <div class="other-albums show-hide" id="albums"></div>
+        <div class="related-artist show-hide" id="artist"></div>
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
